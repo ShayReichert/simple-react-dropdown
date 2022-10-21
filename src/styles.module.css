@@ -3,3 +3,83 @@
 .dropdown {
   color: black;
 }
+
+.dropdownWrapper {
+  display: flex;
+  justify-content: center;
+  padding-top: 20px;
+}
+
+.dropdownContainer {
+  width: 174px;
+  font-size: 17px;
+}
+
+.dropdownButton {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 0;
+  background-color: white;
+  border-radius: 7px;
+  width: 100%;
+  padding: 12px 11px;
+  position: relative;
+  text-align: left;
+  font-size: 17px;
+}
+
+.dropdownButton.expanded {
+  border-radius: 7px 7px 0 0;
+}
+
+.dropdownButton:hover {
+  cursor: pointer;
+}
+
+/* .dropdownButton .iconUp,
+.dropdownButton .iconDown {
+  display: flex;
+} */
+
+.dropdownButton .iconUp {
+  display: none;
+}
+.dropdownButton.expanded .iconUp {
+  display: flex;
+}
+
+.dropdownButton .iconDown {
+  display: flex;
+}
+.dropdownButton.expanded .iconDown {
+  display: none;
+}
+
+.dropdownOptions {
+  display: none;
+  list-style: none;
+  padding: 4px 0;
+  margin-top: -4px;
+}
+
+.dropdownOptions.show {
+  display: block;
+}
+
+.dropdownOptions li {
+  background-color: white;
+  padding: 12px 11px;
+}
+
+.dropdownOptions li:active,
+.dropdownOptions li:focus,
+.dropdownOptions li:hover,
+.dropdownOptions li[aria-selected='true'] {
+  background: #e3ede2;
+  cursor: pointer;
+}
+
+.dropdownOptions li:last-child {
+  border-radius: 0 0 7px 7px;
+}

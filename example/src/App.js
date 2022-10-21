@@ -10,17 +10,16 @@ const countries = [
 
 const App = () => {
   const [selectState, setSelectState] = useState('')
-  console.log(selectState)
+
   return (
     <div className='App'>
-      <Dropdown
-        name='state-select'
-        label='State'
-        value={selectState}
-        onChange={setSelectState}
-        options={countries}
-        placeholder='Select a state'
-      />
+      <Dropdown setSelectState={setSelectState} options={countries} />
+
+      <div className='select-option'>
+        {!selectState
+          ? "Vous n'avez pas sélectionné d'état"
+          : ` Vous avez sélectionner l'état ${selectState}`}
+      </div>
     </div>
   )
 }
