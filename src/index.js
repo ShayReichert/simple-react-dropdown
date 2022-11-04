@@ -2,6 +2,13 @@ import React, { useState } from 'react'
 import styles from './styles.module.css'
 import { FiChevronDown, FiChevronUp } from 'react-icons/fi'
 
+/**
+ * The Simple React Dropdown
+ * @component
+ * @param { Function } setSelectState
+ * @param { Array.<{ value: String, label: String }> } options
+ * @return { HTMLElement }
+ */
 export const Dropdown = ({ setSelectState, options }) => {
   const [isOptionsOpen, setIsOptionsOpen] = useState(false)
   const [selectedOption, setSelectedOption] = useState(0)
@@ -10,24 +17,19 @@ export const Dropdown = ({ setSelectState, options }) => {
     setIsOptionsOpen(!isOptionsOpen)
   }
 
-  const setSelectedThenCloseDropdown = (index, value) => {
+  /**
+   * Set selected option with index, set selected state with value and close dropdown.
+   */
+  const setSelected = (index, value) => {
     setSelectedOption(index)
     setSelectState(value)
     setIsOptionsOpen(false)
   }
 
-  const handleKeyDown = (index) => (e) => {
-    switch (e.key) {
-      case 'Enter':
-        e.preventDefault()
-        setSelectedThenCloseDropdown(index)
-        break
-      default:
-        break
-    }
-  }
-
-  const handleListKeyDown = (e) => {
+  /**
+   * Accessibility : Handle key pressed to open dropdown and navigate
+   */
+  const handleKeysDown = (e) => {
     switch (e.key) {
       case 'Escape':
         e.preventDefault()
@@ -50,6 +52,20 @@ export const Dropdown = ({ setSelectState, options }) => {
     }
   }
 
+  /**
+   * Accessibility : Handle key pressed to select an option
+   */
+  const handleKeysDownOption = (index) => (e) => {
+    switch (e.key) {
+      case 'Enter':
+        e.preventDefault()
+        setSelected(index)
+        break
+      default:
+        break
+    }
+  }
+
   return (
     <div className={styles.dropdownWrapper}>
       <div className={styles.dropdownContainer}>
@@ -61,7 +77,7 @@ export const Dropdown = ({ setSelectState, options }) => {
             isOptionsOpen ? styles.expanded : ''
           }`}
           onClick={toggleOptions}
-          onKeyDown={handleListKeyDown}
+          onKeyDown={handleKeysDown}
         >
           {options[selectedOption].label}
           <div className={styles.iconDown}>
@@ -78,7 +94,7 @@ export const Dropdown = ({ setSelectState, options }) => {
           role='listbox'
           aria-activedescendant={options[selectedOption].label}
           tabIndex={-1}
-          onKeyDown={handleListKeyDown}
+          onKeyDown={handleKeysDown}
         >
           {options.map((option, index) => (
             <li
@@ -87,9 +103,9 @@ export const Dropdown = ({ setSelectState, options }) => {
               role='option'
               aria-selected={selectedOption === index}
               tabIndex={0}
-              onKeyDown={handleKeyDown(index)}
+              onKeyDown={handleKeysDownOption(index)}
               onClick={() => {
-                setSelectedThenCloseDropdown(index, option.value)
+                setSelected(index, option.value)
               }}
             >
               {option.label}
