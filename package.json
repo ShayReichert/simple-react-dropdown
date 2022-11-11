@@ -4,7 +4,7 @@
   "description": "A simple react dropdown for form, with select and options html tags.",
   "author": "ShayReichert",
   "license": "MIT",
-  "repository": "ShayReichert/simple-react-dropdown",
+  "repository": "https://github.com/ShayReichert/simple-react-dropdown",
   "main": "dist/index.js",
   "module": "dist/index.modern.js",
   "source": "src/index.js",

@@ -7,18 +7,18 @@
 ## Install
 
 ```bash
-npm install --save simple-react-dropdown
+npm install i simple-react-select-dropdown
 ```
 
 ## How to use
 
-You need to import `Dropdown` to use dropdown, and `simple-react-dropdown/dist/index.css` to access the default style.
+You need to import `Dropdown` to use dropdown, and `simple-react-select-dropdown/dist/index.css` to access the default style.
 See below for the required parameters.
 
 ```jsx
 import React, { useState } from 'react'
-import { Dropdown } from 'simple-react-dropdown'
-import 'simple-react-dropdown/dist/index.css'
+import { Dropdown } from 'simple-react-select-dropdown'
+import 'simple-react-select-dropdown/dist/index.css'
 
 const countries = [
   { value: 'al', label: 'Alabama' },
