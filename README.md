@@ -1,6 +1,6 @@
-# simple-react-dropdown
+# simple-react-select-dropdown
 
-> A simple react dropdown for form, with select and options html tags.
+> A simple react select-dropdown for form, with select and options html tags.
 
 [![NPM](https://img.shields.io/npm/v/simple-react-dropdown.svg)](https://www.npmjs.com/package/simple-react-dropdown) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
@@ -54,6 +54,8 @@ Property | Type | Description
 **setSelectState** | *function* | To store the value of the selected item
 **options** | *array* | An array of objects. Objects must have the keys 'value' (the value to retrieve in the state) and "label" (the value to display on the front).
 
+## See live example
+[See demo live example here](https://shayreichert.github.io/simple-react-dropdown/)
 
 ## License
 
