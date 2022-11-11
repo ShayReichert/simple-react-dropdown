@@ -10,7 +10,10 @@
 npm install --save simple-react-dropdown
 ```
 
-## Usage
+## How to use
+
+You need to import `Dropdown` to use dropdown, and `simple-react-dropdown/dist/index.css` to access the default style.
+See below for the required parameters.
 
 ```jsx
 import React, { useState } from 'react'
@@ -42,11 +45,15 @@ const App = () => {
 export default App
 ```
 
-## Props
+## Required parameters
 
-The Dropdown component works with two props: 
-- "setSelectState" : to store the value of the selected item
-- "options" : an array of objects. Objects must have the keys "value" (the value to retrieve in the state) and "label" (the value to display on the front).
+This required paramaters must be passed to `Dropdown` as props. 
+
+Property | Type | Description
+----- | ----- | -----
+**setSelectState** | *function* | To store the value of the selected item
+**options** | *array* | An array of objects. Objects must have the keys 'value' (the value to retrieve in the state) and "label" (the value to display on the front).
+
 
 ## License
 
