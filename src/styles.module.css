@@ -8,13 +8,12 @@
   display: flex;
   justify-content: center;
   padding-top: 20px;
-  position: relative;
 }
 
 .dropdownContainer {
   width: 174px;
   font-size: 17px;
-  position: absolute;
+  position: relative;
 }
 
 .dropdownButton {
