@@ -1,6 +1,6 @@
 {
   "name": "simple-react-select-dropdown",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "A simple react dropdown for form, with select and options html tags.",
   "author": "ShayReichert",
   "license": "MIT",

@@ -7,7 +7,6 @@
 .dropdownWrapper {
   display: flex;
   justify-content: center;
-  padding-top: 20px;
 }
 
 .dropdownContainer {
@@ -58,9 +57,10 @@
 }
 
 .dropdownOptions {
+  position: absolute;
   display: none;
   overflow: auto;
-  max-height: 20rem;
+  max-height: 10rem;
   list-style: none;
   padding: 4px 0;
   margin-top: -4px;
